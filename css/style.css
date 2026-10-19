@@ -1,0 +1,301 @@
+/*
+  style.css: UMSI Engaged Learning Office (Client Project)
+  Mobile first: the base styles are the phone layout, so there is no min/max-width
+  media query. Larger screens adapt with fluid units and auto-fit grids.
+  The only media query is for accessibility (prefers-reduced-motion).
+
+  CITATIONS / SOURCES 
+    - Draft written by me with assistance from Claude 
+    - Used code from HW3 and discssussions
+    - Used colors from the UM Brand Guidelines 
+*/
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #1c1c1c;
+  background: #ffffff;
+}
+
+h1 { 
+    font-size: 1.6rem; 
+    font-weight: bold; 
+    line-height: 1.2; 
+}
+
+h2 { 
+    font-size: 1.6rem; 
+    font-weight: bold; 
+    line-height: 1.2; 
+}
+
+h3 { 
+    font-size: 1.3rem;
+     font-weight: bold; 
+     line-height: 1.2; 
+}
+
+strong, th { 
+    font-weight: bold; 
+}
+
+em{ 
+    font-style: italic; 
+}
+
+a { 
+    color: #00274C; 
+}
+
+main ul { 
+    list-style: disc;
+     padding-left: 1.5rem; 
+}
+
+main ol{ 
+    list-style: decimal;
+     padding-left: 1.5rem; 
+}
+
+main li{
+     margin-bottom: 0.75rem; 
+}
+
+/* Keyboard focus */
+a:focus{ 
+    outline: 3px solid #00274C; 
+    outline-offset: 3px; 
+}
+
+header a:focus, footer a:focus, aside a:focus { 
+    outline-color: #ffffff; 
+}
+main:focus{ 
+    outline: none; 
+}
+
+/* ---------- Skip to main (hidden until it has focus) ---------- */
+.skip-link {
+  position: absolute;
+  top: -5rem;
+  left: 1rem;
+  padding: 0.85rem 1.1rem;
+  font-weight: bold;
+  color: #00274C;
+  background: #FFCB05;
+}
+.skip-link:focus{
+     top: 1rem; 
+}
+
+/* ---------- Header and navigation ---------- */
+header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  grid-template-areas:
+    "logo title"
+    "nav nav";
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  color: #ffffff;
+  background: #00274C;
+}
+
+header img { 
+    grid-area: logo; 
+    width: 100%;
+     height: auto; 
+}
+
+header h1{
+     grid-area: title;
+}
+
+header nav { 
+    grid-area: nav;
+}
+
+nav ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+  gap: 0.5rem;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+} 
+
+nav a:hover{
+     color: #00274C; 
+     background: #ffffff; 
+}
+
+/* Current page: bold + underline + maize background (not just a color change) */
+nav a.active {
+  color: #00274C;
+  background: #FFCB05;
+  border-color: #FFCB05;
+  text-decoration: underline;
+  text-decoration-thickness: 0.2rem;
+}
+
+
+main {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+main > section, main > aside {
+  margin-bottom: 2rem;
+}
+main section > *, main aside > * {
+  margin-bottom: 1rem;
+}
+
+/* first section on each page is the maize "hero" */
+main > section:first-of-type {
+  padding: 1.5rem;
+  background: #FFCB05;
+}
+main > section:first-of-type h2 { 
+    font-size: 2rem; 
+}
+
+/* ---------- Cards (grid) ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+.card-grid-compact {
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+}
+
+article {
+  display: grid;
+  align-content: start;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border: 1px solid #c9ced6;
+  border-top: 0.4rem solid #FFCB05;
+}
+
+/* link buttons at the bottom of the home page cards */
+article > a:last-child:not(:only-child) {
+  justify-self: start;
+  display: inline-block;
+  padding: 0.75rem 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  background: #00274C;
+}
+
+/* ---------- Images, video, table ---------- */
+main img {
+  display: block;
+  width: 100%;
+  max-width: 40rem;
+  height: auto;
+}
+main iframe {
+  width: 100%;
+  max-width: 40rem;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.table-wrap {
+     overflow-x: auto; 
+}
+table { 
+    width: 100%; 
+    min-width: 36rem; 
+    border-collapse: collapse;
+     font-size: 1rem; 
+}
+caption { 
+    padding-bottom: 0.5rem; 
+    font-weight: bold; 
+    text-align: left; 
+}
+th, td { 
+    padding: 0.75rem;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #c9ced6; 
+}
+thead th { 
+    color: #ffffff;
+    background: #00274C; 
+}
+tbody th { 
+    background: #f2f2f2; 
+}
+
+/* ---------- Newsletter aside ---------- */
+main > aside {
+  padding: 1.5rem;
+  color: #ffffff;
+  background: #00274C;
+}
+main > aside a { 
+    color: #ffffff; 
+}
+main > aside div a {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #00274C;
+  background: #FFCB05;
+}
+
+/* ---------- Footer (same on every page) ---------- */
+footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 0.5rem 2rem;
+  padding: 1.5rem 1rem;
+  font-size: 1rem;
+  color: #ffffff;
+  background: #00274C;
+  border-top: 0.4rem solid #FFCB05;
+}
+footer a { 
+    display: inline-block; 
+    padding: 0.6rem 0;
+     color: #ffffff; 
+}
+footer address {
+     font-style: normal; 
+}
+
+nav a,
+article > a:last-child:not(:only-child),
+main > aside div a {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
