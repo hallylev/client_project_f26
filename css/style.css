@@ -341,6 +341,21 @@ footer address {
     color: #00274C;
     background: #FFCB05;
   }
+
+  .zoom{
+    overflow: hidden; 
+  }
+  .zoom img{
+    display: block;
+    width: 100%;
+    transform-origin: 45% 60%;
+    transition: transform 0.5s ease;
+  }
+
+  .zoom:hover img{
+    transform: scale(2.5); 
+  }
+
 }
 
 
