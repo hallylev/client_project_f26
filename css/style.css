@@ -1,11 +1,10 @@
 /*
   style.css: UMSI Engaged Learning Office (Client Project)
-  Mobile first: the base styles are the phone layout, so there is no min/max-width
-  media query. Larger screens adapt with fluid units and auto-fit grids.
-  The only media query is for accessibility (prefers-reduced-motion).
+  Mobile first: the base styles are the phone layout
+  Larger screens adapt with fluid units using rem, fr, and % - I also added a media querey for desktop view
 
   CITATIONS / SOURCES 
-    - Draft written by me with assistance from Claude 
+    - Code written by me with assitance from W3Schools, Youtube, and Claude for debugging 
     - Used code from HW3 and discssussions
     - Used colors from the UM Brand Guidelines 
 */
