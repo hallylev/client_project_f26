@@ -96,7 +96,7 @@ header h1{
 
 nav ul {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.5rem;
   list-style: none;
   padding: 0;
@@ -182,12 +182,13 @@ article > a:last-child:not(:only-child) {
   background: #00274C;
 }
 
-.table-wrap {
+.table-wrap { 
   overflow: auto; 
 }
 
 table { 
-  width: 100%; 
+  width: 100%;  
+  min-width: 36rem;
   border-collapse: collapse;
 }
 
@@ -247,6 +248,10 @@ footer a {
 
 footer address {
   font-style: normal; 
+}
+
+.single-card {
+  grid-template-columns: 1fr;
 }
 
 
